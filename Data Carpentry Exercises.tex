@@ -15,8 +15,95 @@
 \begin{document}
 
 \maketitle
-\Section*{Learning Journal 2}
+\section*{Learning Journal 2}
 \section{Data Carpentry Exercises}
+\subsection{Introduction}
+\textbf{Responses to Questions}
 
+\begin{itemize}
+    \item How many people have used spreadsheets in their research?
+\end{itemize}
+
+I haven't used spreadsheets for my research - but in my previous "life" i worked in inventory planning and operations. This lead me to using spreadsheets everyday.
+
+\begin{itemize}
+    \item How many people have accidentally done something that made them frustrated or sad?
+\end{itemize}
+
+I have had the experience of someone messing up my model data for inventory sheets, that was an time-sink to find the issues and to fix. I have also accidentally applied formulas to the wrong cells, which gave me really weird results. 
+
+\subsection{Formatting data tables in Spreadsheets}
+\textbf{Responses to Questions}
+
+\begin{itemize}
+    \item With the person next to you, identify what is wrong with this spreadsheet. Discuss the steps you would need to take to clean up the two tabs, and to put them all together in one spreadsheet.
+\end{itemize} 
+
+There are many things wrong with this spreadsheet:
+\begin{itemize}
+    \item it is difficult that all the data is split across different tables in each tab - it is hard to tell if the studied locations overlap or not. 
+    \item Terms in columns vary - eg. \begin{verbatim} mabati_sloping
+    \end{verbatim} compared with mabatisloping
+    \item Some data doesn't make sense - eg. -99 in the rooms column
+    item\ Data tables are not the same in both tabs. There is a 'Plots' table in Mozambique tab, but not in the Tanzania tab.
+    \item the highlighted cell is unclear as to the relevance of the additional barn
+    \item the asterisk marked data to include a cowshed is unclear
+    \item the asterisked data on cows is misleading as it adds the now dead cow to the count that should just be looking at the collected temporally fixed data
+    \item the livestock table in the Mozambique tab is VERY problematic. It combines all data in one cell without defining the individual animal counts
+    \item the Mozambique livestock table also includes the 'Look after Cows' column which is not consistent/relevant
+    \item the livestock table in the Tanzania tab contains empty fields - is this a zero count, or a missing count?
+    \item In the Tanzania tab there seems to be an inconsistency with the 'sunbricks' entry - how is this different to burntbricks - how are these forms being classified and named for the purpose of the study?
+    \end{itemize}
+
+\subsection{Formatting problems}
+
+Other problems to consider is the formatting - using the 'mergecell' function to make the data 'look pretty'.
+As this is 'raw data' its purpose is to organise the data in a way that is effective and able to be manipulated by the program to create relevant, interpret able outputs. 
+
+\subsection{Dates as data}
+\textbf{Separating dates into components}
+to do the exercise these are the processes/actions I took:
+\begin{enumerate}
+    \item Download file
+    \item Open file using Microsoft Excel
+    \item Identified table to manipulate
+    \item Copied table to new sheet - labelled this sheet 'working tab'
+    \item Added three columns between columns A and B using insert columns function. These are labelled 'Day', 'Month', and 'Year' respectively.
+    \item Entered the following codes into cells b2: =DAY(A2) c2: =MONTH(A2) d2: =YEAR(A2)
+    \item I formatted columns B, C, and D, to a number format without decimal places. 
+    \item Adding a new line of data just with the 17/11 information meant the data in the year column automatically populated the current year - 2019. 
+\end{enumerate}
+
+\subsection{Quality assurance}
+The processes/actions I took:
+\begin{enumerate}
+    \item Download file
+    \item Ppen file using Microsoft Excel
+    \item Copied table to new sheet - labelled this sheet 'working tab'
+    \item Select column D
+    \item While column is highlighted go to \[File> Data> Data Tools> Data Validation\]
+    \item In the section tab of the window use the drop-down menu under Allow to select 'Whole Number'.
+    \item Under Data select 'between' and enter 1 as the minimum and 30 as the maximum. 
+    \item To test this is working, I tried entering '31' in cell D133. I received an error message as expected. 
+    \item Go back to the the Data Validation window. In the Input Error tab, I enter a custom input error name and description.
+    \item Go back to the the Data Validation window. In the Error Alert tab select style: Warning and input a custom warning. title: Invalid Entry. Error Message: Entry must be between 1 and 30.
+    \item I created an additional rule set for column E. The age range was set as 0 - 120, it should be a whole number and the warning message was set as: Age should be in whole years and between 0 and 120.
+\end{enumerate}
+
+\subsection{Exporting data}
+Save a file in CSV format.
+The steps/actions I took:
+\begin{enumerate}
+    \item Go to: \[File > Save AS\]
+    \item Select folder directory to save file to
+    \item Name file and select .CSV as file format.
+    \item Click save
+    \item As I had created a new tab for my working data i was only able to save that tab as a CSV. This is good to know for purposes of separating raw data, working data, and for versioning and back up purposes as well. 
+\end{enumerate}
+
+\subsection{Reflections}
+The Data Carpentry exercises were useful as they reminded me of the 'best practice' ways of dealing with data, and the ideals for how it should be recorded to maximise the potential output. 
+
+In my previous  jobs, I have worked with data a lot in various settings and for various purposes - so the mechanics of this task was not new or difficult for me. I was glad for the refresher though. 
 
 \end{document}
