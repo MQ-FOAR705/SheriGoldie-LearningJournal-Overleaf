@@ -1,0 +1,34 @@
+\documentclass{article}
+\usepackage{geometry}
+\usepackage[utf8]{inputenc}
+% package and file page setting for image input
+\usepackage{graphicx}
+\graphicspath{ {images/} }
+% package for setting page format and size, and setting paragraph indents, paragraph spacing, and line spacing. 
+% for Baseline stretch
+% 1 = 1 line spacing in Word 
+% 1.3 = 1.5 line spacing in Word 
+% 1.5 = double spacing in Word
+\geometry{a4paper, left=25mm, right=25mm, top=25mm, bottom=25mm}
+\setlength{\parindent}{2em}
+\setlength{\parskip}{1em}
+\renewcommand{\baselinestretch}{1.3}
+%package to include header and footer information. Only starts from second page with these settings.
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{Right Side of Header}
+\lhead{Left Side of Header}
+\lfoot{Left side of Footer}
+\rfoot{Page \thepage}
+
+
+\title{Title Goes Here}
+\author{Author Goes Here}
+\date{Date Goes Here}
+
+\begin{document}
+
+\maketitle
+
+\end{document}
