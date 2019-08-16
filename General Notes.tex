@@ -5,7 +5,6 @@
 \graphicspath{ {images/} }
 \geometry{a4paper, left=25mm, right=25mm, top=25mm, bottom=25mm}
 \setlength{\parindent}{2em}
-\setlength{\parskip}{1em}
 \renewcommand{\baselinestretch}{1.3}
 \usepackage{dirtytalk}
 \usepackage{fancyhdr}
@@ -15,7 +14,7 @@
 \lhead{FOAR705 - Learning Journal}
 \lfoot{Session 2, 2019 - Macquarie University}
 \rfoot{Page \thepage}
-
+\usepackage{dirtytalk}
 
 \title{FOAR705 - General Notes}
 \author{Sheriden Goldie}
@@ -43,8 +42,9 @@ However I realised that this is not in fact a back up. This information wasn't i
 I use OneDrive - and while initially I thought this was a backup, I now realise it is in actual fact a cloud server, that I use for convenience. It allows me to access files from both my desktop computer, my laptop and my phone. However, again this is at the mercy of Microsoft services. Should that provider change, or have issues, that information is also vulnerable. 
 
 I read the article shared by Brian on Slack about data backup plans, and resolved to implement a weekly system for my university and creative projects at the very least. 
-
-\textbf{Tedious Process in Current Work}
+\\*
+\\*
+\noindent \textbf{Tedious Process in Current Work}
 
 Currently I am unsure of what tedious processes to include here.
 
@@ -62,6 +62,8 @@ We will also have the scoping exercise due next week. The information for this w
 
 \section{12 - 18th August}
 
+15th August - completed a part of the Data Carpentry Module - Spreadsheets for Social Sciences
+
 This week we also have the scoping exercise/proof of concept assignment due. I submitted this on Monday - as I realised I could run short on time later in the week. 
 I used LaTeX to create the document, and submitted it as a PDF to iLearn, as well as a .TEX document on Cloudstor. 
 I didn't have any issue creating the document, and I added header and footer features, as well as a table of contents. These features are a little redundant - but it was an opportunity  to test the media. 
@@ -70,18 +72,46 @@ I also shared some frustrations/findings with the LaTeX channel on Slack that I 
 
 I met with Mona this week to help her better understand the class and all the different things that need to be done. I have also completed the Data Carpentry exercises, and created a separate learning journal entry for that experience. 
 
-Questions to raise with Brian during the consultation time before class:
+I have also worked to consolidate my favourite LaTeX packages into a template document for easy access with notes - \say{metadata} if you will - to enable me to reuse them - and remember what they do. 
+
+\subsection{Questions to raise with Brian/Shawn during the consultation time before/after class:}
 \begin{enumerate}
     \item Combining GitHub Repositories (is it possible to set up a GitHub repository then sync to it from overleaf)
+    \subitem Potentially archive unused repository
     \item Verbatim text in Overleaf/LaTeX - how to have this occur in-line
+    \subitem This is determined by the document type, and it seems to actually be a better practice in terms of clear documentation to have this continue to be formatted as the document dictates
     \item Line breaks in Overleaf/LaTeX - I think I might be using different terminology - hence not being able to find a satisfactory answer
+    \subitem Look up:
+    \subitem Line break, or carriage return, or paragraph
+    \subitem I worked with Kathryn on this and we were able to find a solution using the code:
+    \begin{verbatim}
+        \\*
+        \\*
+    \end{verbatim}
     \item Check in on assignment feasibility - indexing note taking system/maybe something that can generate something to link to LaTeX for referencing purposes?
-    \item Do i need to separate my Data Carpentry exercises into a separate repository to make them easier to see?
+    \subitem Look up - this research also adds to Elaboration Assignments
+    \subitem Tropy - works with scanned archival documents. 
+    \subitem Content management systems - Omeka
+    \subitem CMS - content management systems
+    \subitem API intermediary step - using opensource software then creating a modification
+    \subitem Possible alternative to note taking indexing plan - Utilising Brian's work on static websites to develop a new model for `The Quarry' website.
+    \item Do I need to separate my Data Carpentry exercises into a separate repository to make them easier to see?
+    \subitem Feedback from Shawn - No, as part of the Learning Journal is fine. 
 \end{enumerate}
 
+\subsection{Data and Metadata in English Literature Studies}
 
+Data has been a difficult term to lock down in literary studies, and similar fields like philosophy. We do not have the same quantifiable data like science, or social sciences. 
+
+It could be useful to consider the texts that we read to then write about as data. We can then treat/manipulate that data in a certain way (close reading, distant reading), which informs how we interpret that data and draw new conclusions from that process. 
+
+This also means that our data has metadata, such as page numbers - the ability to find the section of text that your might reference. The author, title, and date of publication, are also examples of metadata.
 
 \section{19 - 25th August}
+
+This week the Scoping Part 2 is due, which is a decomposition of the ideas brought forward in the first scoping exercise. 
+We are also required to finish the Spreadsheet for Social Sciences learning material on DataCarpentry.org
+I have done this, and will be moving on the the next part which is learning about The Unix Shell.
 
 \section{26th August - 1st September}
 
