@@ -1,0 +1,54 @@
+\documentclass{article}
+\usepackage{geometry}
+\usepackage[utf8]{inputenc}
+
+\usepackage{graphicx}
+% package and file page setting for image input
+\graphicspath{ {images/} }
+
+\usepackage{geometry}
+% package for setting page format and size, and setting paragraph indents, paragraph spacing, and line spacing. 
+\geometry{a4paper, left=25mm, right=25mm, top=25mm, bottom=25mm}
+\setlength{\parindent}{2em}
+\setlength{\parskip}{1em}
+\renewcommand{\baselinestretch}{1.3}
+% for Baseline stretch
+% 1 = 1 line spacing in Word 
+% 1.3 = 1.5 line spacing in Word 
+% 1.5 = double spacing in Word
+
+\usepackage{fancyhdr}
+%package to include header and footer information. Only starts from second page with these settings.
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{Right Side of Header}
+\lhead{Left Side of Header}
+\lfoot{Left side of Footer}
+\rfoot{Page \thepage}
+
+\usepackage{dirtytalk}
+% this package is useful for typesetting quotes - it allows for nested quotes using \say {xxxx \say{nested items here} XXXX. }
+
+
+\title{Title Goes Here}
+\author{Author Goes Here}
+\date{Date Goes Here}
+
+\begin{document}
+
+\maketitle
+
+\tableofcontents
+%creates a table of contents based on sections and subsections
+
+\pagebreak
+%ends text on current page, and moves all following text to the next page.
+
+\section{Section Heading}
+\subsection{Subsection Heading}
+
+This is the main body of text. \say{This is a quote about a \say{nested quote}, so that I can test the \say{dirtytalk} package.}
+
+This is the next paragraph. 
+
+\end{document}
