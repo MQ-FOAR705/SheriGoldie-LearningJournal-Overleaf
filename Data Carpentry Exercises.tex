@@ -29,8 +29,11 @@
 \pagebreak
 
 \section{Spreadsheets for Social Sciences}
-\textbf{Responses to Questions}
 
+It is important for researchers to observe good data practices when working with data to ensure that errors, corruption, and misrepresentation are kept to a minimum. 
+Good data practices mean that if mistakes are made - they can be found, noticed, and rectified before any analysis is done. This saves time and frustration from the researchers, and those that hope to use their method or findings. 
+
+\textbf{Initial Questions}
 \begin{itemize}
     \item How many people have used spreadsheets in their research?
 \end{itemize}
@@ -44,6 +47,7 @@ I haven't used spreadsheets for my research - but in my previous 'life' i worked
 I have had the experience of someone messing up my model data for inventory sheets, that was an time-sink to find the issues and to fix. I have also accidentally applied formulas to the wrong cells, which gave me really weird results. 
 
 \subsection{Formatting data tables in Spreadsheets}
+
 \textbf{Responses to Questions}
 
 \begin{enumerate}
@@ -77,7 +81,7 @@ Considering metadata during both the collection and analysis phases of research 
 
 \noindent \textbf{Questions}
 \begin{itemize}
-    \item Discuss this data with a partner and make a list of some of the types of metadata that should be recorded about this dataset. It may be helpful to start by asking yourself, ``What is not immediately obvious to me about this data? What questions would I need to know the answers to in order to analyze and interpret this data?''
+    \item Discuss this data with a partner and make a list of some of the types of metadata that should be recorded about this data set. It may be helpful to start by asking yourself, ``What is not immediately obvious to me about this data? What questions would I need to know the answers to in order to analyze and interpret this data?''
 \end{itemize}
 
 Types of metadata that should be recorded
@@ -89,8 +93,8 @@ Types of metadata that should be recorded
 
 \subsection{Formatting Problems}
 
-Other problems to consider is the formatting - using the 'mergecell' function to make the data 'look pretty'.
-As this is 'raw data' its purpose is to organise the data in a way that is effective and able to be manipulated by the program to create relevant, interpret able outputs. 
+Other problems to consider is the formatting - using the ``mergecell'' function to make the data look ``pretty''.
+As this is ``raw data'' its purpose is to organise the data in a way that is effective and able to be manipulated by the program to create relevant, interpret able outputs. 
 
 \subsection{Dates as Data}
 \textbf{Separating dates into components}
@@ -118,8 +122,13 @@ The processes/actions I took:
     \item Under Data select 'between' and enter 1 as the minimum and 30 as the maximum. 
     \item To test this is working, I tried entering '31' in cell D133. I received an error message as expected. 
     \item Go back to the the Data Validation window. In the Input Error tab, I enter a custom input error name and description.
-    \item Go back to the the Data Validation window. In the Error Alert tab select style: Warning and input a custom warning. title: Invalid Entry. Error Message: Entry must be between 1 and 30.
+    \item Go back to the the Data Validation window. In the Error Alert tab select style: Warning and input a custom warning. Title: Invalid Entry. Error Message: Entry must be between 1 and 30.
     \item I created an additional rule set for column E. The age range was set as 0 - 120, it should be a whole number and the warning message was set as: Age should be in whole years and between 0 and 120.
+    \item I applied an additional data validation to column F. This was to allow a selection from a list of accepted entries. 
+    \item I went to the Data Validation Window while the column was selected. In the Setting's tab I selected the following: ``Allow'' was set to ``List''. with ``ignore blank'' and ``in cell dropdown'' checked. 
+    \item Then in the ``Source'' field, I typed the entries, separated by a comma and a space. As so "grass, muddaub, burntbricks, sunbricks, cement"
+    \item I entered the Input Error as, title: ``Entry must be as per List'', and Error message: ''The entry must be entered as per the following list: grass, muddaub, burntbricks, sunbricks, cement. Use the dropdown menu to select your entry''
+    \item I also tried creating a table as the  ``Source'' data in an additional worksheet. This worked - however care must be taken as this would not be preserved if exporting the data to a .CSV file. 
 \end{enumerate}
 
 \subsection{Exporting Data}
@@ -141,7 +150,7 @@ However the process of documenting my learning process concurrent with the activ
 \section{The Unix Shell}
 
 The aim of this exercise is to gain familiarity with using a Unix Shell. 
-I have heard of a Unix Shell before, and have seen one used for a comission based sales system. However I have never used it, and am interested to see how it actually works. 
+I have heard of a Unix Shell before, and have seen one used to manage the data for a commission based sales system. However I have never used it, and am interested to see how it actually works. 
 
 \subsection{Setup}
 In the setup we download a zip file, move it to the desktop and extract the files within it. 

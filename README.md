@@ -1,6 +1,8 @@
 # SheriGoldie-LearningJournal-Overleaf
 Syncing from Overleaf
 
+Overleaf Share link: https://www.overleaf.com/read/vgmsjfphycpq
+
 General Notes - Organised by week - with dates noted. 
 
 Learning LaTeX - Documenting the process of learning to use LaTeX in Overleaf to create a documnet
