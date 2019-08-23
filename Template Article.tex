@@ -28,6 +28,8 @@
 \usepackage{dirtytalk}
 % this package is useful for typesetting quotes - it allows for nested quotes using \say {xxxx \say{nested items here} XXXX. }
 
+\usepackage{outlines}
+%this package is a way to enable the display of itemised lists with nested sub-items as well. 
 
 \title{Title Goes Here}
 \author{Author Goes Here}
@@ -65,14 +67,33 @@ This is a new paragraph with \emph{emphasized text} to make it stand out.
 ``this is a quote with double quotation marks''
 %this is the best way to deal with double quotation marks in LaTeX without using any additional packages
 % the ` is found on the tilde key - ~ on my keyboard it is at the top left next to 1/!
-
-
-
 \\*
 \\*
+To create a line break use the following:
+\begin{verbatim}
+    \\*
+    \\*
+\end{verbatim}
+
 % use the above for inserting a line break - it requires the same \\* to be entered on two lines, one after the other.
 
+\textbf{Nested List Items}
+
+An alternative to this approach, which facilitates the production of nested lists is the outlines package. To produce a bulleted list with three levels it is as simple as
+
+\begin{outline}
+ \1 Top level item
+   \2 Sub item
+     \3 sub sub item
+\end{outline}
 
 
+To make a numbered list (as opposed to a bulleted list) one can simply pass the enumerate option to this package
+
+\begin{outline}[enumerate]
+ \1 Top level item
+   \2 Sub item
+     \3 sub sub item
+\end{outline}
 
 \end{document}
