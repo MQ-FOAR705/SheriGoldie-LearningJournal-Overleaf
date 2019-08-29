@@ -22,6 +22,8 @@
 % To create a list of labels
 % https://tex.stackexchange.com/a/418302/5482
 \usepackage{crossreftools}
+% Apply filter to list of labels - so that labels from figures are not affected
+\newcommand{\includelabelintoc}{Error:}
 
 
 \title{FOAR705 - Digital Fundamentals}
@@ -335,7 +337,7 @@ Move the quotes.txt file to the current directory using the mv command.
 NB: I had to move directories to do this step correctly.
 
 \textbf{Using exact command in CLI error}
-\label{ Using exact commands in CLI}
+\label{ Error: Using exact commands in CLI}
 
 Also including the period . was key for the command to work as this is a shorthand for the current directory.
 
@@ -362,8 +364,8 @@ Return to the data-shell directory and remove the quotes.txt file using the rm c
 
 \includegraphics[width=10cm]{Images/GitBash_025.PNG}
 
-\textbf{Unix rm -i Confirmation}
-\label{ Unix rm -i Confrimation}
+\textbf{Shell Command rm -i Confirmation}
+\label{ Error: Shell Command rm -i Confrimation}
 When using the rm command with the -i parameter, it gives a second prompt to confirm if you want to complete the action. 
 
 This requires a response - as just pressing enter negates the command. I responded by typing y, and this confirmed the command, and removed the file.

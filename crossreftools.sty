@@ -19,7 +19,7 @@
 %%
 %%
 
-\def\crossreftoolspackageversion{0.9}
+\def\crossreftoolspackageversion{0.9.a}
 \NeedsTeXFormat{LaTeX2e}[1995/12/01]
 
 \ProvidesPackage{crossreftools}[2019/01/03 - v\crossreftoolspackageversion]
@@ -421,6 +421,13 @@
 
 
 
+
+
+
+
+
+
+
 \newcommand{\crtlistoflabels}{%
   \ifcrtfinal
   \else
@@ -429,11 +436,32 @@
   \fi
 }
 
+%Edited by Brian Ballsun-Stanton
+%https://tex.stackexchange.com/a/26873/5483
+\usepackage{xstring}%
+
+% to declare an filter put the below into your preamble
+% \newcommand{\includelabelintoc}{error:}
+
+
 
 \newcommand{\crtaddlabeltotoc}[1]{%
   \ifcrtfinal
   \else
-  \addcontentsline{\crt@listoflabelsfileextension}{\crt@listoflabelsstructurelevel}{\protect\numberline{\expandafter\crtrefnumber{#1}}#1}%
+  \ifx \includelabelintoc \undefined
+  %\includelabelintoc is not defined
+    \addcontentsline{\crt@listoflabelsfileextension}{\crt@listoflabelsstructurelevel}{\protect\numberline{\expandafter\crtrefnumber{#1}}#1 asdf}%
+    
+  \else
+  %user has set filter label
+      \IfSubStr{#1}{\includelabelintoc}{%
+      % This label should be included
+      \addcontentsline{\crt@listoflabelsfileextension}{\crt@listoflabelsstructurelevel}{\protect\numberline{\expandafter\crtrefnumber{#1}}#1}%
+      }{%
+      %Do not include label if it doesn't match
+      }
+    
+  \fi
   \fi
 }
 
@@ -656,5 +684,3 @@
 }
 
 \endinput
-
-

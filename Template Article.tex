@@ -31,6 +31,16 @@
 \usepackage{outlines}
 %this package is a way to enable the display of itemised lists with nested sub-items as well. 
 
+% To hyperlink references in contents and other lists
+\usepackage[colorlinks=true,linkcolor=blue]{hyperref}
+\usepackage{hyperref}
+% To create a list of labels
+% https://tex.stackexchange.com/a/418302/5482
+\usepackage{crossreftools}
+%To apply filtering function to Label List Creation - only include labels beginning with "Error:" - means figure labels won't be affected.
+\newcommand{\includelabelintoc}{Error:}
+
+
 \title{Title Goes Here}
 \author{Author Goes Here}
 \date{Date Goes Here}

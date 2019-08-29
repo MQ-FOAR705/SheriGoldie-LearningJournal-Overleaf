@@ -22,6 +22,8 @@
 % To create a list of labels
 % https://tex.stackexchange.com/a/418302/5482
 \usepackage{crossreftools}
+%To apply filtering function to Label List Creation - only include labels beginning with "Error:" - means figure labels won't be affected.
+\newcommand{\includelabelintoc}{Error:}
 
 \title{FOAR705 - General Notes}
 \author{Sheriden Goldie}
@@ -86,17 +88,17 @@ I didn't have any issue creating the document, and I added header and footer fea
 I met with Mona this week to help her better understand the class and all the different things that need to be done. I have also completed the Data Carpentry exercises, and created a separate learning journal entry for that experience. 
 
 \subsection{LaTeX and Slack}
-\label{ LaTeX Alignment}
+\label{ Error: LaTeX Alignment}
 I also shared some frustrations/findings with the LaTeX channel on Slack that I started - this was to do with alignments of text in a document. O was able to solve the issue on my own by looking up indents on the LaTeX learn site - but hopefully it will be useful for others to see the process/outcome.
 
 I have also worked to consolidate my favourite LaTeX packages into a template document for easy access with notes - ``metadata'' if you will - to enable me to reuse them - and remember what they do. 
 
 \subsection{Questions to raise with Brian/Shawn during the consultation time before/after class:}
-\label{ Issues raised with Brain/Shawn Week 3}
+\label{ Error: GitHub Troubleshooting - Redundant Repository}
 \begin{outline}[enumerate]
     \1 Combining GitHub Repositories (is it possible to set up a GitHub repository then sync to it from overleaf)
         \2 Potentially archive unused repository
-        \2 check with Brian - he can give ownership of repo to me to enable deletion if needed
+        \2 Ping Brian - he can give ownership of repo to me to enable deletion if needed
     \1 Verbatim text in Overleaf/LaTeX - how to have this occur in-line
         \2 This is determined by the document type, and it seems to actually be a better practice in terms of clear documentation to have this continue to be formatted as the document dictates
     \1 Line breaks in Overleaf/LaTeX - I think I might be using different terminology - hence not being able to find a satisfactory answer
@@ -167,7 +169,7 @@ He uses propriety software to achieve a research and writing workflow that close
 
 \section{26th August - 1st September}
 
-\label{LaTeX Label Error}
+\label{Error: LaTeX Label Error}
 \textbf{Latex Label Error}
 
 I found that when applying the crossreftool style package to LaTeX, that i had and unexpected error with an image that was inserted. This was because the Figure had a parameter also called:

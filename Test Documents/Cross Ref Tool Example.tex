@@ -1,19 +1,12 @@
-% eaxmple of cross reference tool used in LaTeX. Proof done by Brian.
-% https://github.com/MQ-FOAR705/Demonstration-of-crossreftools
-
 \documentclass{article}
 \usepackage[utf8]{inputenc}
 \usepackage{lipsum}
-
+\usepackage{cleveref}
 %https://www.overleaf.com/learn/latex/Paragraph_formatting#Paragraph_spacing
 \usepackage[utf8]{inputenc}
 \usepackage[english]{babel}
 
-%This sets the indent length of a paragraph 
-\setlength{\parindent}{0em}
 
-%This sets the whitespace between paragraphs
-\setlength{\parskip}{1em}
 
 \usepackage[colorlinks=true,linkcolor=blue]{hyperref}
 
@@ -21,6 +14,13 @@
 
 % https://tex.stackexchange.com/a/418302/5482
 \usepackage{crossreftools}
+
+\newcommand{\includelabelintoc}{error:}
+% https://tex.stackexchange.com/a/436076/5483
+\usepackage{tocloft}
+\advance\cftsecnumwidth 0.5em\relax
+\advance\cftsubsecindent 0.5em\relax
+\advance\cftsubsecnumwidth 0.5em\relax
 
 
 \title{Demonstration of crossreftools}
@@ -38,12 +38,22 @@
 \renewcommand
 \listoflabelsname{List of Errors}
 
+% Hack to do single-line skipping in list of errors
+\setlength{\parskip}{-1em}
+
 \crtlistoflabels
 
 
+% We change parskip *after* create list of labels...
 
+%This sets the indent length of a paragraph 
+\setlength{\parindent}{0em}
+
+%This sets the whitespace between paragraphs
+\setlength{\parskip}{1em}
 
 \section{Introduction}
+
 
 \lipsum[1]
 \lipsum[1]
@@ -51,13 +61,16 @@
 \subsection{Specific activity 1}
 \lipsum[1]
 \subsection{Error 1}
-\label{This was a silly error}
+\label{error: This was a silly error}
 \lipsum[1]
 \subsection{Specific activity 1}
 \lipsum[1]
-\subsection{Error 2}
-\label{This was a different silly error}
+\subsection{Non-displayed Error 2}
+\label{This was a different silly error that isn't displayed}
 \lipsum[1]
+\subsection{Displayed Error 3}
+\label{error: This was a different silly error that is displayed}
+\lipsum[1-3]
 
 
 
