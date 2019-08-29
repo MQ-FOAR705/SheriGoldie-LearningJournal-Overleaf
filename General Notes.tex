@@ -6,7 +6,7 @@
 \geometry{a4paper, left=25mm, right=25mm, top=25mm, bottom=25mm}
 \setlength{\parindent}{2em}
 \renewcommand{\baselinestretch}{1.3}
-\usepackage{dirtytalk}
+% to add header and footer information
 \usepackage{fancyhdr}
 \pagestyle{fancy}
 \fancyhf{}
@@ -14,8 +14,15 @@
 \lhead{FOAR705 - Learning Journal}
 \lfoot{Session 2, 2019 - Macquarie University}
 \rfoot{Page \thepage}
-\usepackage{dirtytalk}
+% to create lists with nested bullet points
 \usepackage{outlines}
+% To hyperlink references in contents and other lists
+\usepackage[colorlinks=true,linkcolor=blue]{hyperref}
+\usepackage{hyperref}
+% To create a list of labels
+% https://tex.stackexchange.com/a/418302/5482
+\usepackage{crossreftools}
+
 \title{FOAR705 - General Notes}
 \author{Sheriden Goldie}
 \date{}
@@ -23,6 +30,16 @@
 \begin{document}
 
 \maketitle
+
+% create table of contents based on sections/subsections
+\tableofcontents
+
+% Create and index of errors
+% so the list has a pretty name
+\renewcommand
+\listoflabelsname{List of Errors}
+
+\crtlistoflabels
 
 
 \section*{General Notes by Week}
@@ -66,13 +83,16 @@ This week we also have the scoping exercise/proof of concept assignment due. I s
 I used LaTeX to create the document, and submitted it as a PDF to iLearn, as well as a .TEX document on Cloudstor. 
 I didn't have any issue creating the document, and I added header and footer features, as well as a table of contents. These features are a little redundant - but it was an opportunity  to test the media. 
 
-I also shared some frustrations/findings with the LaTeX channel on Slack that I started - this was to do with alignments of text in a document. O was able to solve the issue on my own by looking up indents on the LaTeX learn site - but hopefully it will be useful for others to see the process/outcome.
-
 I met with Mona this week to help her better understand the class and all the different things that need to be done. I have also completed the Data Carpentry exercises, and created a separate learning journal entry for that experience. 
+
+\subsection{LaTeX and Slack}
+\label{ LaTeX Alignment}
+I also shared some frustrations/findings with the LaTeX channel on Slack that I started - this was to do with alignments of text in a document. O was able to solve the issue on my own by looking up indents on the LaTeX learn site - but hopefully it will be useful for others to see the process/outcome.
 
 I have also worked to consolidate my favourite LaTeX packages into a template document for easy access with notes - ``metadata'' if you will - to enable me to reuse them - and remember what they do. 
 
 \subsection{Questions to raise with Brian/Shawn during the consultation time before/after class:}
+\label{ Issues raised with Brain/Shawn Week 3}
 \begin{outline}[enumerate]
     \1 Combining GitHub Repositories (is it possible to set up a GitHub repository then sync to it from overleaf)
         \2 Potentially archive unused repository

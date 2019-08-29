@@ -1,0 +1,61 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{lipsum}
+
+%https://www.overleaf.com/learn/latex/Paragraph_formatting#Paragraph_spacing
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+
+%This sets the indent length of a paragraph 
+\setlength{\parindent}{0em}
+
+%This sets the whitespace between paragraphs
+\setlength{\parskip}{1em}
+
+\usepackage[colorlinks=true,linkcolor=blue]{hyperref}
+
+\usepackage{hyperref}
+
+% https://tex.stackexchange.com/a/418302/5482
+\usepackage{crossreftools}
+
+
+\title{Demonstration of crossreftools}
+\author{Brian Ballsun-Stanton}
+\date{August 2019}
+
+\begin{document}
+
+\maketitle
+
+\tableofcontents
+
+
+% so the list has a pretty name
+\renewcommand
+\listoflabelsname{List of Errors}
+
+\crtlistoflabels
+
+
+
+
+\section{Introduction}
+
+\lipsum[1]
+\lipsum[1]
+\lipsum[1]
+\subsection{Specific activity 1}
+\lipsum[1]
+\subsection{Error 1}
+\label{This was a silly error}
+\lipsum[1]
+\subsection{Specific activity 1}
+\lipsum[1]
+\subsection{Error 2}
+\label{This was a different silly error}
+\lipsum[1]
+
+
+
+\end{document}
