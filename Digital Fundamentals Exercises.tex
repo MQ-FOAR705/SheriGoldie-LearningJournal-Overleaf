@@ -16,6 +16,14 @@
 \rfoot{Page \thepage}
 
 
+% To hyperlink references in contents and other lists
+\usepackage[colorlinks=true,linkcolor=blue]{hyperref}
+\usepackage{hyperref}
+% To create a list of labels
+% https://tex.stackexchange.com/a/418302/5482
+\usepackage{crossreftools}
+
+
 \title{FOAR705 - Digital Fundamentals}
 \author{Sheriden Goldie}
 \date{Session 2, Macquarie University}
@@ -25,7 +33,16 @@
 \maketitle
 
 \section*{Data Carpentry Exercises}
+
+% create table of contents based on sections/subsections
 \tableofcontents
+
+% Create and index of errors
+% so the list has a pretty name
+\renewcommand
+\listoflabelsname{List of Errors}
+
+\crtlistoflabels
 \pagebreak
 
 \section{Spreadsheets for Social Sciences}
@@ -171,12 +188,7 @@ We most commonly interact with computers through a \textbf{GUI}; a \textbf{G}rap
 
 \textbf{The Shell} is a command line interface, (CLI). This is an interface that is based on "knowledge in the head", but is also able to complete repetitive tasks quickly and efficiently.
 
-\begin{figure}[h]
-    \centering
-    \includegraphics[width=10cm]{Images/GitBash_001.PNG}
-    \caption{The Command Shell: Viewed using GitBash}
-    \label{fig:GitBash_001}
-\end{figure}
+\includegraphics[width=10cm]{Images/GitBash_001.PNG}
 
 
 The first symbol is \$ - this is a prompt, and means the shell is ready and waiting for you to type a command. 
@@ -321,6 +333,10 @@ navigate to the thesis directory and validate that the file has changed names.
 
 Move the quotes.txt file to the current directory using the mv command.
 NB: I had to move directories to do this step correctly.
+
+\textbf{Using exact command in CLI error}
+\label{Using exact commands in CLI}
+
 Also including the period . was key for the command to work as this is a shorthand for the current directory.
 
 One has to be careful when specifying the target file name, since mv will silently overwrite any existing file with the same name, which could lead to data loss. An additional option, mv -i (or mv --interactive), can be used to make mv ask you for confirmation before overwriting.
@@ -343,6 +359,27 @@ Use a recursive option to copy a directory and all it's contents to a different 
 
 \subsubsection{Removing Files and Directories}
 Return to the data-shell directory and remove the quotes.txt file using the rm command.
+
+\includegraphics[width=10cm]{Images/GitBash_025.PNG}
+
+\label{Unix rm -i confrimation}
+When using the rm command with the -i parameter, it gives a second prompt to confirm if you want to complete the action. 
+
+This requires a response - as just pressing enter negates the command. I responded by typing y, and this confirmed the command, and removed the file.
+
+When trying to apply this same command to a directory we get an error message.
+When using the command rm -ir we are asking to remove the files recursively. So the interface is able to interpret the intention to check/delete the files within the directory. Only when  the directory is empty can it be deleted.
+
+\includegraphics[width=10cm]{Images/GitBash_026.PNG}
+
+\subsubsection{Wildcards}
+* is a wildcard function that matches zero or more characters, while ? is a wildcard function that matches exactly one character.
+
+\includegraphics[width=10cm]{Images/GitBash_027.PNG}
+
+\subsection{Pipes and Filters}
+
+
 
 
 \section{OpenRefine for Social Sciences}

@@ -167,6 +167,20 @@ He uses propriety software to achieve a research and writing workflow that close
 
 \section{26th August - 1st September}
 
+\label{LaTeX Label Error}
+\textbf{Latex Label Error}
+
+I found that when applying the crossreftool style package to LaTeX, that i had and unexpected error with an image that was inserted. This was because the Figure had a parameter also called:
+\begin{verbatim}
+    \label{}
+\end{verbatim}
+
+Because of this double up, the compile process was trying to use the figure label for the list of labels - but the format was unexpected. So I changed the way I added this image to a simpler inline command:
+\begin{verbatim}
+    \includegraphics[]{}
+\end{verbatim}
+
+
 \section{2nd - 8th September}
 
 \section{9th - 15th September}
