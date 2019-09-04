@@ -184,8 +184,44 @@ Because of this double up, the compile process was trying to use the figure labe
 
 Brian responded to my query about this on Slack - and a band-aid fix is sufficient for the moment.
 
+- We have extended this solution, and Brian has applied a filter to the list of labels, that means only labels beginning ``Error:'' will be picked up by the list of labels command. 
 
+\label{Error: Ctrl + foo in Unix Shell}
+
+One night on Slack (late night) Kylie had used a command in the unix shell, that she wasn't sure what it did. I tried to help and couldn't find much - due mainly to a language barrier as I couldn't read the command she had used in teh terms that would have yeilded a google result.
+
+This was brought up in class, and we learned some useful commands for the shell. 
+\begin{enumerate}
+    \item control + c : this is a cancel command. It will cancel whatever command is running
+    \item  control + d : this is a disconnect command. It will close the shell completely
+    \item  control + s : this command makes the shell stop accepting input (doesn't work in GitBash)
+    \item  control + q : this command makes the shell resume accepting input (doesn't work in GitBash)
+    \item  control + z : in the text editor specifically this will suspend a document (Suspension not enabled in GitBash)
+    \item \& : is a command to show how many suspended programs there are (Suspension not enabled in GitBash)
+    \item control + o : in the text editor this will write the entered information to the document.
+    \item control + x : in the text editor this will exit the text editor
+\end{enumerate}
+    
 \section{2nd - 8th September}
+\label{Error: LaTeX and Symbols}
+When completing the Digital Fundamentals exercises for this week, I came across the issue that I wanted a certain symbol to appear in my text, as I was describing a process in the command shell. 
+
+I wanted to use the \textgreater{} symbol, however when using that key, I got this > in the compiled text. 
+
+So after trying to find a list of special character commands, and only finding them about math functions in LaTeX or similar, I took my query to Slack.
+
+Brian responded to try using the following: 
+\begin{verbatim}
+    \textgreater
+\end{verbatim}
+
+I then found I was having to add a tilde after to force the space between symbol and next word, so we amended the command to the following"
+\begin{verbatim}
+    \textgreater{}
+\end{verbatim}
+
+By adding the ending brackets - we tell the system that the command has ended, and it should continue reading/translating the commands as basic text. 
+
 
 \section{9th - 15th September}
 

@@ -381,7 +381,93 @@ When using the command rm -ir we are asking to remove the files recursively. So 
 \includegraphics[width=10cm]{Images/GitBash_027.PNG}
 
 \subsection{Pipes and Filters}
+We discussed in class that GitBash, or similar Unix shells, are very good at doing individual tasks. The power of it becomes apparent when we are able to combine commands to create an output. This is like putting bits of pipe together, the output of one pipe, one command, can become the input for the next command. 
 
+The first thing in this section is learning the wc command. This is for word count.
+
+The first thing I do is navigate to the necessary location, and verify that I am in the correct place.
+
+\includegraphics[width=10cm]{Images/GitBash_028.PNG}
+
+The using the wc command, we are able to generate a list. The results from left to right read, line count, word count, character count, filename.
+
+\includegraphics[width=10cm]{Images/GitBash_029.PNG}
+
+Next we apply the filer -l to the command. I am able to do this quickly by using the up arrow to retrieve my previously entered command, and add the -l filter, instead of typing the whole string.
+
+\includegraphics[width=10cm]{Images/GitBash_030.PNG}
+
+We are then able to use the \textgreater{} symbol to redirect the result. Instead of displaying it, it will create a file, which you need to specify the name of.
+
+\includegraphics[width=10cm]{Images/GitBash_031.PNG}
+
+Now we can use the sort command on the file we just created. The exercise also asked to use the -n filter to sort the output numerically. However it appears that GitBash automatically sorts numerically in ascending order. 
+
+\includegraphics[width=10cm]{Images/GitBash_032.PNG}
+
+
+Then we can combine this with previous commands to create a new file of the sorted data. We can also use the command, head, to return the heading, or the top rows, according to what we specify.
+
+\includegraphics[width=10cm]{Images/GitBash_032.PNG}
+
+There is advice to not try to redirecting the output onto the file that is being worked on. So I tested this. 
+
+This is my lengths.txt file before any changes.
+
+\includegraphics[width=8cm]{Images/GitBash_034a.PNG}
+
+This is the command I ran.
+
+\includegraphics[width=10cm]{Images/GitBash_033.PNG}
+
+This is how the file appeared after this.
+
+\includegraphics[width=8cm]{Images/GitBash_034.PNG}
+
+The file was empty, the data inside it had been lost. 
+
+\textbf{Using \textgreater{} \textgreater{}}
+
+Using one \textgreater{} sends the output data to a file. \textgreater{}\textgreater{} works slightly differently.
+
+To show this, I followed the exercise and entered the following commands:
+
+\includegraphics[width=10cm]{Images/GitBash_035.PNG}
+
+This shows that as I entered the commands three times, the use of the \textgreater{} would overwrite the file contents, while the \textgreater{}\textgreater{} would add the new information to the existing file.
+
+Using the | symbol, called pipe, we can combine a number of commands in sequence. 
+
+\includegraphics[width=10cm]{Images/GitBash_036.PNG}
+
+We can combine more than two. 
+
+Thinking through the sequence of operations is important. In the last command here, we needed to find the 3 files with the least number of lines in this directory. 
+
+\includegraphics[width=10cm]{Images/GitBash_037.PNG}
+
+We can validate this is correct as there is only a small number of files at this stage using ls - but it is best to be certain of the logic of the string, especially as the data sets get larger.
+
+\includegraphics[width=10cm]{Images/GitBash_038.PNG}
+
+\textbf{Pipe Reading}
+In the pipe reading exercise - we must read the commands, and figure out what happens, to what data in each step.
+
+I found this easiest when I segmented each step - and focused on the fact that the output of one command became the input for the next. 
+
+I believe I will end up with the rows of data ending, rabbit, deer, raccoon. 
+
+These are the strings I followed to check my thinking and outcome. 
+
+\includegraphics[width=10cm]{Images/GitBash_039.PNG}
+
+\textbf{Pipe Construction}
+In the pipe construction, we are shown the commands that will extract/isolate parts of the data we refer to. 
+We then are asked to formulate a string to achieve creating a list of the unique animals listed in the file animals.txt
+
+This is my working:
+
+\includegraphics[width=10cm]{Images/GitBash_040.PNG}
 
 
 
