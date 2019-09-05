@@ -5,6 +5,7 @@
 \graphicspath{ {images/} }
 \geometry{a4paper, left=25mm, right=25mm, top=25mm, bottom=25mm}
 \setlength{\parindent}{2em}
+\setlength{\parskip}{1em}
 \renewcommand{\baselinestretch}{1.3}
 % to add header and footer information
 \usepackage{fancyhdr}
@@ -227,7 +228,50 @@ By adding the ending brackets - we tell the system that the command has ended, a
 
 I am having issues with the ordering and organisation of figures in LaTeX
 
-Use htbp as the float command - figures flow in sequence entered.
+After looking up the error I received - h float indicator is too vague. The error advised trying to use htbp as the float command - once I changed the float commands, the figures flow in sequence entered.
+
+\href{https://www.overleaf.com/learn/latex/Positioning_of_Figures}{Overleaf Link to page on Positioning of Figures}
+
+\subsection{Linebreaks in LaTeX}
+\label{Error: Linebreaks in LaTeX}
+
+I had an error that a manual linebreak was not being acknowledged. This was using the following command:
+\begin{verbatim}
+    \\*
+    \\*
+\end{verbatim}
+
+This was recognised as forcing the line break, but it was not being followed because it wasn't in a place that LaTeX expected. 
+
+\href{https://www.overleaf.com/learn/latex/Errors/LaTeX_Error:_There's_no_line_here_to_end}{There's no line here to end error link}
+
+
+So I removed this code, and added a parskip command in the preamble to make more space appear following a paragraph.
+
+This command was:
+\begin{verbatim}
+    \setlength{\parskip}{1em}
+\end{verbatim}
+
+In general this is a reason to test out ConTeXt as that allows more control over formatting. 
+
+\label{Error: copying links to Overleaf}
+When adding the link to the above hyperref - when pasting in the link the ' was changed to the following
+\begin{verbatim}
+    %27
+\end{verbatim}
+
+And so the link wouldn't work. I was able to change these characters to and apostrophe manually and this fixed the issue.
+
+\subsection{Notes on Completing Elaboration 2}
+In completing the Elaboration Part 2 this week, I had to make some tactical decisions as to what I could include in my testing at this stage. 
+
+I decided to focus on the backend of my research process, the data collection and synthesis. 
+The writing and publication programs I highlighted in Elaboration 1, and all thing's I will learn through use in this course, and so the learning process will be continual and in tandem with other software learning. 
+
+This also made the workload for the Elaboration assignment more manageable in the time I have available.
+
+I have also separated my testing documentation into the learning journal, and the assignment document proper remains in the assignment project.
 
 \section{9th - 15th September}
 
