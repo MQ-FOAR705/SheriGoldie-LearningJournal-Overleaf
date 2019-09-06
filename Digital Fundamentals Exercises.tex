@@ -469,6 +469,84 @@ This is my working:
 
 \includegraphics[width=10cm]{Images/GitBash_040.PNG}
 
+\textbf{Which Pipe Exercise}
+In this exercise we are asked to identify with string of commands will output the data we want - that being a list f the unique animals in a file, and the count of how often each appeared in the list. 
+
+This is my working to determine option 4 was correct:
+
+\includegraphics[width=10cm]{Images/GitBash_041.PNG}
+
+\textbf{Wildcard Expressions}
+
+An additional syntax we have learned is using square brackets. This works with the wildcard function to add another variable. 
+
+In this example we want to find files ending in both a and b, but exclude files ending in z. 
+
+So the square brackets work to offer a and b in the same string command as limiting but separate options.
+
+\includegraphics[width=10cm]{Images/GitBash_042.PNG}
+
+\subsection{Loops}
+Loops are a programming construct which allow us to repeat a command or set of commands for each item in a list. As such they are key to productivity improvements through automation. Similar to wildcards and tab completion, using loops also reduces the amount of typing required (and hence reduces the number of typing mistakes).
+
+\includegraphics[width=10cm]{Images/GitBash_043.PNG}
+
+The shell recognises we are constructing a loop, and prompts with the \textgreater{} symbol.
+
+When the shell sees the keyword for, it knows to repeat a command (or group of commands) once for each item in a list. Each time the loop runs (called an iteration), an item in the list is assigned in sequence to the variable, and the commands inside the loop are executed, before moving on to the next item in the list. Inside the loop, we call for the variable’s value by putting \$ in front of it. The \$ tells the shell interpreter to treat the variable as a variable name and substitute its value in its place, rather than treat it as text or an external command.
+
+\textbf{Notes on  greater than and dollar sign in Shell}
+\label{Error: Notes on  greater than and dollar sign in Shell}
+Here we see > being used a shell prompt, whereas > is also used to redirect output. Similarly, \$ is used as a shell prompt, but, as we saw earlier, it is also used to ask the shell to get the value of a variable.
+
+If the shell prints > or \$ then it expects you to type something, and the symbol is a prompt.
+
+If you type > or \$ yourself, it is an instruction from you that the shell should redirect output or get the value of a variable.
+
+
+\textbf{Variables in Loops}
+
+\includegraphics[width=10cm]{Images/GitBash_044.PNG}
+
+The first code block gives the same output on each iteration through the loop. Bash expands the wildcard *.pdb within the loop body (as well as before the loop starts) to match all files ending in .pdb and then lists them using ls. 
+
+\textbf{Limiting sets of files}
+
+\includegraphics[width=10cm]{Images/GitBash_045.PNG}
+
+In the second part of this exercise the solution indicates that I would have only received one file, octane.pdb as a result. However in GitBash I received both cubane.pdb and octane.pdb as a result.
+
+\textbf{Saving a file in a loop}
+\label{Error: Saving file in a loop}
+
+When trying to run the following command loop to include outputting a file, i encountered some difficulty
+
+\includegraphics[width=10cm]{Images/GitBash_046.PNG}
+
+this error occured for every time the shell tried to write to a file. The file did not exist, and so it couldn't write to the file, and it didnt create it.
+it also said cat : .: is a directory
+
+\begin{verbatim}
+$  for alkanes in *.pdb
+>do
+>echo $alkanes
+>cat $alkanes > alkanes.pdb
+>done
+\end{verbatim}
+
+however when i ran the following:
+
+\begin{verbatim}
+$for datafile in *.pdb
+>do
+>cat $datafile >> all.pdb
+>done
+\end{verbatim}
+
+it worked, and cat command showed the file as intended.
+
+\includegraphics[width=10cm]{Images/GitBash_047.PNG}
+
 
 
 \section{OpenRefine for Social Sciences}
