@@ -539,7 +539,7 @@ when correcting this oversight - the code ran, but like the exercise outlined th
 
 \includegraphics[width=10cm]{Images/GitBash_048.PNG}
 
-however when I ran the following:
+However when I ran the following:
 
 \begin{verbatim}
 $for datafile in *.pdb
@@ -551,6 +551,136 @@ $for datafile in *.pdb
 it worked, and cat command showed the file as intended.
 
 \includegraphics[width=10cm]{Images/GitBash_047.PNG}
+
+\textbf{Spaces in Names}
+
+Spaces are used to separate the elements of the list that we are going to loop over. If one of those elements contains a space character, we need to surround it with quotes, and do the same thing to our loop variable.
+
+It is simpler to avoid using spaces (or other special characters) in filenames.
+
+\textbf{Using Loops to Copy/Backup Files}
+
+\includegraphics[width=10cm]{Images/GitBash_049.PNG}
+
+Since the cp command does not normally produce any output, it’s hard to check that the loop is doing the correct thing. However, we learned earlier how to print strings using echo, and we can modify the loop to use echo to print our commands without actually executing them. As such we can check what commands would be run in the unmodified loop.
+
+\textbf{Doing a dry run, using Echo command}
+
+A loop is a way to do many things at once — or to make many mistakes at once if it does the wrong thing. One way to check what a loop would do is to echo the commands it would run instead of actually running them.
+
+In attempting this I was worried about it executing the command and duplicating my previous work - but I realise that this is not what the echo command does in this instance - it does show the result of the loop on the screen - ``printed'' but not executed. 
+
+\includegraphics[width=10cm]{Images/GitBash_050.PNG}
+
+
+I was able to confirm this by checking the folder after running the echo loop. 
+
+\includegraphics[width=12cm]{Images/GitBash_051.PNG}
+
+\textbf{Nested Loop}
+
+\includegraphics[width=10cm]{Images/GitBash_052.PNG}
+
+We have a nested loop, i.e. contained within another loop, so for each species in the outer loop, the inner loop (the nested loop) iterates over the list of temperatures, and creates a new directory for each combination.
+
+\subsection{Shell Scripts}
+
+Creating shell scripts in a file, with the file type .sh.
+Use the nano command to create a file and enter the text in the file as head -n 15 octane.pdb | tail -n 5
+
+\includegraphics[width=10cm]{Images/GitBash_053.PNG}
+
+We usually call programs like Microsoft Word or LibreOffice Writer “text editors”, but we need to be a bit more careful when it comes to programming. By default, Microsoft Word uses .docx files to store not only text, but also formatting information about fonts, headings, and so on. This extra information isn’t stored as characters, and doesn’t mean anything to tools like head: they expect input files to contain nothing but the letters, digits, and punctuation on a standard computer keyboard. When editing programs, therefore, you must either use a plain text editor, or be careful to save files as plain text.
+
+\textbf{Using the shell to create a run a shell file to complete a task:}
+\label{Error: Changing a shell file}
+
+\includegraphics[width=10cm]{Images/GitBash_054.PNG}
+
+When I edited the middle.sh file in the first instance, I forgot to delete put the octane.pdb filename, and so had an error when I tried to run the shell as an per the instructions. 
+So I was able to amend the file, and run it with the expected result.
+
+\includegraphics[width=10cm]{Images/GitBash_055.PNG}
+
+For the same reason that we put the loop variable inside double-quotes, in case the filename happens to contain any spaces, we surround \$1 with double-quotes.
+
+\includegraphics[width=10cm]{Images/GitBash_056.PNG}
+
+\includegraphics[width=10cm]{Images/GitBash_057.PNG}
+
+To make it easier for ourselves or someone else to know what the string is does, and how to use it we can add comments in the file.
+
+\includegraphics[width=10cm]{Images/GitBash_058.PNG}
+
+A comment starts with a \# character and runs to the end of the line.
+
+The only caveat is that each time you modify the script, you should check that the comment is still accurate: an explanation that sends the reader in the wrong direction is worse than none at all.
+
+
+\textbf{Listing Unique species exercise}
+
+\includegraphics[width=10cm]{Images/GitBash_059.PNG}
+
+\textbf{typos in Shell files}
+\label{Error: Typos in Shell files}
+
+While there was a typo error in one part of the shell script - it continued to attempt to run the remainder of the script. So I knew there was an error in one line only that affected the output.
+
+\includegraphics[width=10cm]{Images/GitBash_060.PNG}
+
+Once the typo was corrected - the shell script ran as expected. 
+
+\textbf{Using History command to record/save a useful string}
+
+When you run a number of commands and want to save them, the history command can do this. History will show a list of recent commands - which can be added to the tail command in a pipe to output the commands you want to save. This can be output to a file - which with some clean up and added comments can be a useful shell file that can be reused later.
+
+Note that commands are saved in the history before being run. This is helpful when a command causes an error or a crash - as it is then possible to know what caused the issue. When using history then, make sure you allow for the most recent item to be the history command that you run to create that same list ( and adjust the tail argument accordingly).
+
+
+
+\subsection{Finding Things}
+
+\textbf{Using GREP to find things}
+ 
+ ``grep'' is a contraction of ‘global/regular expression/print’, a common sequence of operations in early Unix text editors. It is also the name of a very useful command-line program.
+ 
+The command grep finds and prints lines in files that match a pattern. 
+This is case sensitive, and it is useful to include the searched for item in quotation marks, even if only a single word - as it aids how we think about using grep.
+
+Using grep to find all instances of the sequence ``not'', a``the'', and ``The.''
+
+
+\includegraphics[width=10cm]{Images/GitBash_061.PNG}
+
+Beginning to use arguments to refine/adjust the grep search
+
+\includegraphics[width=10cm]{Images/GitBash_062.PNG}
+
+\includegraphics[width=10cm]{Images/GitBash_063.PNG}
+
+\includegraphics[width=10cm]{Images/GitBash_064.PNG}
+
+
+Using grep to detimine which string will produce a single line as a result:
+
+\includegraphics[width=10cm]{Images/GitBash_065.PNG}
+
+Using the -w argument is what will achieve this - as this searches for complete words, not the sequence as part of a word.
+
+\textbf{Wildcards}
+
+grep’s real power doesn’t come from its options, though; it comes from the fact that patterns can include wildcards. (The technical name for these is regular expressions, which is what the ‘re’ in ‘grep’ stands for.)
+
+We use the -E option and put the pattern in quotes to prevent the shell from trying to interpret it. (If the pattern contained a *, for example, the shell would try to expand it before running grep.) The \^ in the pattern anchors the match to the start of the line. The . matches a single character (just like ? in the shell), while the o matches an actual `o'.
+
+\includegraphics[width=10cm]{Images/GitBash_066.PNG}
+
+\textbf{Listing vs. Finding}
+
+ls and find can be made to do similar things given the right options, but under normal circumstances, ls lists everything it can, while find searches for things with certain properties and shows them.
+
+The find command can be given several other criteria known as “tests” to locate files with specific attributes, such as creation time, size, permissions, or ownership. 
+
 
 
 
