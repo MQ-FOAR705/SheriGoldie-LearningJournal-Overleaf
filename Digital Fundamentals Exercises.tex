@@ -682,10 +682,219 @@ ls and find can be made to do similar things given the right options, but under 
 The find command can be given several other criteria known as “tests” to locate files with specific attributes, such as creation time, size, permissions, or ownership. 
 
 
-
+\pagebreak
 
 \section{OpenRefine for Social Sciences}
-\subsection{Part 1}
+
+
+\subsection{Set Up}
+
+OpenRefine is downloaded from www.openrefine.org
+
+It requires a java plug in, and the download for this is prompted during installation if necessary.
+
+The tool will run start up in a window, and then open the working tool in a browser window where you will work on your data.
+
+\subsection{Introduction}
+
+OpenRefine is an open-source and free tool for working with messy data. It enables cleaning up said data, and recording how this is done - which is useful for academics in providing data provenance with their studies.
+
+
+\subsection{Working with OpenRefine}
+
+When you work on a file in OpenRefine it is called a project. OpenRefine also doesn't make changes to your original raw data. Which is useful for data provenance and also rectifying any mistakes or data corruption.
+
+To create a new project you import your data by browsing files on your computer. OpenRefine is able to work with a variety of file formats, and this should be specified during the import.
+
+The Parse next field indicates how many rows of the data contains the column headings, or other information that isn't the data itself - eg, headings, metadata notes.
+
+To then progress to working on your file click the create project button. 
+
+\textbf{Facets}
+
+Facets are a key part of working in OpenRefine. 
+
+
+Using a text facet we can see that the data in the `villages' column has some discrepancies.
+
+We can also see that the facet shows the text, and the number of time/rows it occurs in. 
+
+We could correct these discrepancies using the `edit' function within the facet - and the changes could be applied to all similar values in the data range (the village column). 
+
+There are other ways to make these changes though.
+
+\textbf{Numeric data in OpenRefine}
+\label{Error: Numeric data in OpenRefine}
+
+NB: all data is imported into OpenRefine as if it were text - and so when wanting to work with data numerically, we must `transform' the data type from text to numeric.
+
+We discovered this is trying to facet the interview date column numerically, and the result was that the column did not contain numerical data.
+
+I had originally thought that this a reflected in the data being presented with the month appearing as letters, but that was a misinterpretation, and reflective of how the data was formatted, not the data the cell contained. 
+
+\textbf{Clustering}
+
+To fix the discrepancies in the `villages' column, we can use the clustering function in the facet we created.
+
+When we click `cluster' a window opens, and various methods of clustering the data points, and their outcome are listed. There are also `keying functions' which can be adjusted for different results.
+
+We can chose any we would like to adopt, and redo this process numerous times to further refine the data.
+
+Though there are some data points that cannot be refined this way, because they are not similar enough to be certain of the accuracy of the change. For example in the `villages' column, there is a field containing `49,' which cannot be merged with any of the other names without more information.
+
+In this case as well, the clustering did not merge all parts that we believe should have been, like  `Chirdozo' with `Chirodzo'. As humans we can see that this is likely a typo, and so we can use the edit within the facet to make this change manually.
+
+\textbf{Transforming Data}
+
+In the column `items owned' the information is separated by numerous characters, ;, ', [, and ].
+
+These create difficulties in faceting the column to something useful, so we must remove some of the extraneous characters. 
+
+Using the `transform' function, we can apply a GREL expression to execute a change within this data, as using the cluster function is not appropriate.
+
+the GREL strings we use to clean this column are:
+\begin{itemize}
+    \item value.replace("[", "")
+    \item value.replace("]", "")
+    \item value.replace("'", "")
+    \item value.replace(" ", "")
+\end{itemize}
+
+These can all be combined into one string, with multiple actions. eg: value.replace("'","").replace("[","").replace("]","").replace(" ","") 
+
+We end up with the information separated in the column only by ;
+
+We can then facet the column, but using a custom facet, to indicate the information is separated by ; and view the information in a way that is useful. This must be entered in the Expression field of the custom facet window as value.split(";")
+
+This tells us that the two most commonly owned items are mobile phones and radios, and the two least commonly owned are cars and computers.
+
+We can apply this same process to the months without food column, and surmise that the month most commonly identified by the respondents as being without food is November.
+
+We can `reuse' previous GREL expressions in the transform window by going to the history tab. This is useful for applying the same cleanup to other columns.
+
+\textbf{Undo and Redo}
+
+It is possible to undo/redo multiple steps in OpenRefine. The undo/redo button also acts as a record of all actions applied to the project, and acts more like a menu than an instantaneous button.
+
+We are able to then undo multiple steps, and OpenRefine will enact that visually for us to check before confirming/continuing. We are then able to redo multiple actions in the same way. 
+
+I can see this being useful if a mistake is made in a step but not noticed immediately, and so you could backtrack through your actions to discover which step caused the error and correct from that point specifically.
+
+\textbf{Trim Leading and Trailing Whitespace}
+
+There are a number of `common' transformations that OpenRefine allows to apply quickly and easily.
+
+When we facet the wall type column, a field is separated even though it looks like it should be grouped with muddaub. This is because some of the cell entries contain an extra space after the word, which the computer notes, but the human eye doesn't necessarily see. 
+
+Using the common transform function to trim leading and trailing whitespace, we can use a previously established function to resolve this and further refine our project.
+
+\subsection{Filtering and Sorting with OpenRefine}
+
+\textbf{Filtering}
+\textbf{Error: Filters doesn't automatically summon the text facet box}
+\label{Error: Filter doesn't automatically summon the text facet box}
+
+In addition to facets, filtering is a useful tool to work on subsets of data within your project.
+
+Then course instructions imply that applying the text filter will also automatically cause the text facet box to appear on the left of the screen. I found that this wasn't the case in my experience, the text filter acted similar to a filter in excel, in that when applied it  only showed the rows with data that matched the filter conditions. 
+
+However when I apply the facet, the text filter is automatically applied to the facet, and vice versa.
+
+After applying a text facet to the column `respondent roof type', we can further filter the data.
+
+We find that when filtering by `mabat', we have two data results that match the filter. 
+
+At the top left of the screen it confirms the filter in place, and highlights then number of rows selected. in this case we are working within 58 rows of a total of 131. 
+
+There is also the option to visualise more or less rows in the project - but this doesn't change the amount of rows selected through the filter. 
+
+Facets are applied in order, and subsequent facets will apply to the data filtered previously, but not to the excluded data.
+
+The refine the search we could filter using more letters. Or select one of the text facet results. and use the inlcude/exclude buttons.
+
+Ensure that when moving on to other tasks, you remove facets to ensure you are again  working with your full data, as in all 131 rows of data. So for our next steps we must remove these facets, and return to working with the full data set for the next part.
+
+
+\textbf{Sort}
+
+Similar to filtering, in the drop down menu from a column heading we can also sort the rows.
+
+We apply a sort to the column `gps altitude.' This reveals a number of cells with zero entered, and the next is a number over 600. We are then able to surmise that the zero points are most likely due to the information not being recorded - in the case of the gps signal being lost when the data was collected. 
+
+Once a sort is applied to a column, the drop down will then show the sort item with an arrow next to it, leading to more options, like reverse and remove sort, this also indicates that the column has already been sorted. 
+
+\textbf{Sorting by multiple columns}
+
+The sort function can be applied to multiple columns, and subsequent sorts work withing the order of the previously applied sort.
+
+We can use this to find out the correct village for the entry `49' in the village column.
+
+Using the edit column to move the village column to the end, we can compare the village data to gps information. Sorting to group the gps information seems to imply that `49' could be `Chirodzo', but it is not conclusive as other villages have very similar gps coordinates.
+
+By moving the village column back to the beginning, and comparing to the interview date instead, we can see that the only village interviewed on the same date as entry `49' is in fact Chirodzo, so we can apply this change confident in our reasoning to its accuracy.
+
+\textbf{Error: Removing ALL sorts before attempting next task}
+\label{Error: Removing ALL sorts before attempting next task}
+
+I found that i had issues after moving the village column back to the beginning and trying to compare then interview dates. this was because I hadn't completely removed all the sorts on the gps columns. 
+
+I went back and removed the sorts, but I could have also used the Undo/Redo record to see which one had not been removed.
+
+\subsection{Examining Numbers in OpenRefine}
+
+Data is automatically assumed to be text in OpenRefine, unless otherwise specified. Use the transform function to change the way data in a column behaves, eg from text to number.
+
+\textbf{Numeric Facet}
+
+After changing the `years farm' column to number, we can run  a numeric facet on the column. The information appears differently to a text facet - presenting as a numeric range that can be filtered by adjusting the highlighted range.
+
+If a text cell is included in a numeric sort, some more check boxes appear at the bottom of the facet - allowing the option in include or exclude non-numeric data. By checking and unchecking these boxes, it changes the rows that are selected and appear on the screen.
+
+\subsection{Using Scripts}
+
+It is possible to save your OpenRefine as a script. 
+
+In the Undo/Redo tab, you can extract this. This generates a body of text that can be copied and placed in a text editor (Not Word) and saved as a csv file. 
+
+It is possible to filter the actions that you want to include in the extracted data using the checkboxes next to the tasks in the list.
+
+Then you can take this list of operations and apply it to a new project. In the Undo/Redo tab, we can click the apply button, and copy and paste the contents of our created csv file, and then choosing the perform operations button will apply that work to the current project.
+
+\subsection{Exporting and Saving Data from Open Refine}
+
+SO until now, we have been working on lour data in OpenRefine, but it is locked into that space. The saved raw file is unchanged. So we need to export our refined/worked data.
+
+\textbf{Saving}
+
+OpenRefine saves your work continuously, enabling you to reopen your project and continue work without excessive steps.
+
+\textbf{Exporting}
+\label{Exporting}
+
+The instructions for exporting the project from OpenRefine run as follows: 
+\begin{itemize}
+    \item Click the Export button in the top right and select Export project.
+    \item A tar.gz file will download to your default Download directory. Depending on your browser you may have to confirm that you want to save the file. The tar.gz extension tells you that this is a compressed file. The downloaded tar.gz file is actually a folder of files which have been compressed. Linux and Mac machines will have software installed to automatically expand this type of file when you double-click on it. For Windows based machines you may have to install a utility like ‘7-zip’ in order to expand the file and see the files in the folder.
+    \item After you have expanded the file look at the files that appear in this folder. What files are here? What information do you think these files contain?
+\end{itemize}
+
+The exercise solutions states the following
+\begin{itemize}
+    \item  a history folder which contains a collection of zip files. Each of these files itself contains a change.txt file. These change.txt files are the records of each individual transformation that you did to your data.
+    \item a data.zip file. When expanded, this zip file includes a file called data.txt which is a copy of your raw data. You may also see other files.
+\end{itemize}
+
+However in my experience the zipped file has a gz file extension, and as a windows 10 user, I was unable to unzip this file to see it's contents. The lesson suggested downloading a program called 7-zip, but I was unable to find this online. 
+
+I was able to import the .gz file back to OpenRefine though and open the data and the operations history.
+
+I was able to export the data as a csv and open it in excel. however this form doesn't preserve all the operations as well, which I believe the standard export would do.
+
+
+\subsection{Other Resources in Open Refine}
+
+As an opensource tool, there is a diverse range of informationa and support available for OpenRefine. 
+There are numerous resources offered through www.openrefine.org but also a range of associated sites like https://github.com/scottythered/gratefuldata/wiki which has useful and interesting information about data and working with data.
 
 
 \section{R for Social Sciences}
