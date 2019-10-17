@@ -48,6 +48,7 @@
 
 \section*{General Notes by Week}
 \section{29th July - 4th August}
+% Week 1
 Before beginning this class I was very apprehensive about the content and what relevance it would have to my thesis and research. As a creative writing student many of my processes are manual by necessity and the creative process is one that is difficult to automate. 
 
 After the first class, I felt both more at ease and more unsure. The teaching staff were friendly and approachable, although also nervous about what this course will offer creative practice students like myself. I am reassured that at least we will work through the issues together, and I am not alone in my concerns or challenges. 
@@ -74,13 +75,13 @@ In my work getting started is a tiring task. Organising notes, ideas and inspira
 References and citations are only mildly troublesome. I use Scrivener for most of my projects - and set up bibliographies as I progress through the work. For a 3000 word essay it isn't too difficult to keep track of various trains of thoughts in my head. I can see that this will pose a problem for a larger project - like the thesis.
 
 \section{5 - 11th August}
-
+% Week 2
 This week we began work on Data Carpentry. We only got through the introduction section in class - so this is left to finish in our own time. I will work with Mona on this on Wednesday in Week 3. Hopefully I can help her, as she is not confident using computers. 
 
 We will also have the scoping exercise due next week. The information for this will be posted/uploaded to Cloudstor, as well as iLearn.
 
 \section{12 - 18th August}
-
+% Week 3
 15th August - completed a part of the Data Carpentry Module - Spreadsheets for Social Sciences
 
 This week we also have the scoping exercise/proof of concept assignment due. I submitted this on Monday - as I realised I could run short on time later in the week. 
@@ -131,7 +132,7 @@ It could be useful to consider the texts that we read to then write about as dat
 This also means that our data has metadata, such as page numbers - the ability to find the section of text that your might reference. The author, title, and date of publication, are also examples of metadata.
 
 \section{19 - 25th August}
-
+% week 4
 This week the Scoping Part 2 is due, which is a decomposition of the ideas brought forward in the first scoping exercise. 
 We are also required to finish the Spreadsheet for Social Sciences learning material on DataCarpentry.org
 
@@ -170,9 +171,9 @@ I also found: https://nickblackbourn.com/
 He uses propriety software to achieve a research and writing workflow that closely resembles what I am aspiring to create and implement for myself, so it is a good starting point. I hope that by using opensource software I can implement a similar, or even improved, system for my own research.
 
 \section{26th August - 1st September}
-
+%Week 5
 \label{Error: LaTeX Label Error}
-\textbf{Latex Label Error}
+\subsection{Latex Label Error}
 
 I found that when applying the crossreftool style package to LaTeX, that i had and unexpected error with an image that was inserted. This was because the Figure had a parameter also called:
 \begin{verbatim}
@@ -188,6 +189,7 @@ Brian responded to my query about this on Slack - and a band-aid fix is sufficie
 
 - We have extended this solution, and Brian has applied a filter to the list of labels, that means only labels beginning ``Error:'' will be picked up by the list of labels command. 
 
+\subsection{Ctrl+foo in Unix Shell}
 \label{Error: Ctrl + foo in Unix Shell}
 
 One night on Slack (late night) Kylie had used a command in the unix shell, that she wasn't sure what it did. I tried to help and couldn't find much - due mainly to a language barrier as I couldn't read the command she had used in teh terms that would have yeilded a google result.
@@ -205,6 +207,7 @@ This was brought up in class, and we learned some useful commands for the shell.
 \end{enumerate}
     
 \section{2nd - 8th September}
+% week 6
 \label{Error: LaTeX and Symbols}
 When completing the Digital Fundamentals exercises for this week, I came across the issue that I wanted a certain symbol to appear in my text, as I was describing a process in the command shell. 
 
@@ -280,7 +283,7 @@ I am struggling to make sufficient time to finish all the software carpentry for
 I will be able to allocate some extra time early next week to finishing these exercises, as my other subjects may survive with less time spent on them. This was not the case this week.
 
 \section{9th - 15th September}
-
+% week 7
 Notes from meeting with Brain before class about feasibility of project:
 Pandoc - takes input 
 chocolaty windows packager installer builder
@@ -290,26 +293,62 @@ If faculty staff are interested, the demo is in week 14. They can email Brian fo
 
 
 \section*{Semester Recess}
-
+% no section number - (also means not included in table of contents)
 The mid-session break was less productive than desired in terms of Digital Humanities.
 
 I was able to finish the Unix Shell module, and the associated learning journal. 
 
 \section{23rd - 29th September}
-
+% week 8
 This week I caught up on the OpenRefine module for the learning journal submission this week. 
 
-I am still catching up on the Design project, however with other subjects that have 'pinch' aspects competing, progress has not been as consistent as desired.
+I am still catching up on the early stages of the Design project, however with other subjects that have 'pinch' aspects competing, progress has not been as consistent as desired.
 
 \section{30th September - 6th October}
+%week 9
+
+I have been able to work on establishing my preliminary user stories for the Proof of Concept, and have loaded these into Trello for task management.
+
+The process of creating the user stories for my project was daunting at first, but as i progressed through breaking down the ideas, I became aware that the tasks I need to complete to deliver a Minimum viable prototype is relatively simple. This is liberating as it means i can now focus on the process, and know the aspects that are going to require a more attention to execute, and those that won't take as much time. Interestingly in my mind many of these tasks at first seemed to be more complicated than they were, and others were pushed to the side as seeming simpler or less important - but are in fact actually more critical to the delivery of the end result.
+
+This week in class we will continue with learning R and Rstudio. I think this will be very useful for aiding in creating my MVP as part of my plan is to create a software installation package.
 
 \section{7th - 13th October}
+% week 10
+
+\subsection{TEX Live}
+I am installing Tex Live to be able to test my exporting from Scrivener into a Latex format. To install Tex Live I began by reading through the TexLive 2019 guide.
+
+\url{https://www.tug.org/texlive/doc/texlive-en/texlive-en.html}
+
+I think this will actually become the key delivery point of my project - as i have realised that packaging a software installation of Scriverer may not be appropriate due to legal issues, as it is a proprietary software, and it would take considerable effort to maintain the installer to the most up to date version of Scriveners install files, as the update regularly.
+
+It took some time to understand that the installation has a number of different options, depending on what system is being used, and how the user wants to install to go, so I opted for the most straightforward installation on windows, using the installer, instead of the many other options of mirroring the directories or otherwise. 
+This doesn't seem relevant to my purposes at this stage, but it is useful to know, should this project ever be upscaled.
+
+\subsection{Duplicati}
+
+I have also installed Duplicati for the purpose of backing up my working files for this project. 
+
+I have found the manual for Duplicati most helpful in the initial set up.
+
+\url{https://duplicati.readthedocs.io/en/latest/01-introduction/}
+
+
+\subsection{Scrivener}
+
+I have also begun working within Scrivener to set up a template framework for an organisation structure that I can use for my project next year.
+
+
 
 \section{14th - 20th October}
+% week 11
 
 \section{21st - 27th October}
+% week 12
 
 \section{28th October - 3rd November}
+% week 13
 
 \section*{Final Reflections}
 
