@@ -893,12 +893,135 @@ I was able to export the data as a csv and open it in excel. however this form d
 
 \subsection{Other Resources in Open Refine}
 
-As an opensource tool, there is a diverse range of informationa and support available for OpenRefine. 
+As an opensource tool, there is a diverse range of information and support available for OpenRefine. 
 There are numerous resources offered through www.openrefine.org but also a range of associated sites like https://github.com/scottythered/gratefuldata/wiki which has useful and interesting information about data and working with data.
 
 
 \section{R for Social Sciences}
-\subsection{Part 1}
+\subsection{Before we Start}
+
+R is a programming language, while R Studio is a programming environment that utilises R language.
+
+It allows for a series of script commands to be saved and rerun at a later time - which is useful for researchers working with an expanding data-set. 
+
+This is a aspect of reproducible research which is beneficial for researchers. This allows new data to be treated in exactly the same way as previous data, and ensures integrity of the data processing process. 
+
+\subsection{Requirements}
+
+\url{https://datacarpentry.org/r-socialsci/}
+
+\begin{itemize}
+    \item Download and install R
+    \item Download and install R studio
+\end{itemize}
+
+You will also need to install tidyverse in RStudio to complete the exercises.
+
+
+\subsection{Setting up a new project}
+
+To set up a new project, open R studio:
+
+Go to:
+\begin{enumerate}
+    \item File
+    \item New Project - A window will open
+    \item Click on New Directory
+    \item Enter a name for your new project - eg: DataCarpentry
+    \item Click on Create Project 
+\end{enumerate}
+
+Your project has now been created.
+
+In this project you will need to set up some folders to organise your work. Use the create.dir("folder\_name") command in the terminal to create the following folders:
+\begin{itemize}
+    \item data
+    \item data\_output
+    \item fig\_output
+\end{itemize}
+
+I ran the commands, and ended up with this in my files list:
+
+\includegraphics[width=8cm]{Images/RStudio001.PNG}
+
+I was also able to run the command given in the exercise to download the data file to the folder.
+
+\includegraphics[width=8cm]{Images/RStudio002.PNG}
+
+This is the terminal screen showing the commands to create the folders, and download the example file:
+
+\includegraphics[width=10cm]{Images/RStudio003.PNG}
+
+
+Then install the tidyverse package:
+
+\includegraphics[width=10cm]{Images/RStudio004.PNG}
+
+\subsection{Creating Objects in R}
+
+What are known as objects in R are known as variables in many other programming languages. Depending on the context, object and variable can have drastically different meanings. However, in this lesson, the two words are used synonymously. 
+An object is something to which I can assign a value. In the example we work through in the exercise "area\_hectare" is an object, as is "area\_acres"
+
+
+
+\includegraphics[width=8cm]{Images/RStudio005.PNG}
+
+This is the environment in the top right of the window, where the assigned values are displayed.
+
+\includegraphics[width=8cm]{Images/RStudio006.PNG}
+
+At the end of these series of exercises - the area\_acres doesn't change as we don't rerun the assignment command - which is what determines that objects value. It isn't set in a direct relationship with the value of area\_hectares.
+
+To complete this exercise, we assign a value to length, and width, then use those values to create and assign a value to area. Then changing the values assigned to width and length, we can see that as expected the value of area doesn't change.
+
+Assigning the initial values:
+
+\includegraphics[width=8cm]{Images/RStudio007.PNG}
+
+Changing the assigned values:
+
+\includegraphics[width=8cm]{Images/RStudio009.PNG}
+
+Showing the area value remains unchanged - unless the assignment command is rerun.
+
+\includegraphics[width=8cm]{Images/RStudio008.PNG}
+
+
+\subsection{Functions and their arguments}
+
+Functions are “canned scripts” that automate more complicated sets of commands including operations assignments, etc. Many functions are predefined, or can be made available by importing R packages (more on that later). A function usually gets one or more inputs called arguments. Functions often (but not always) return a value. A typical example would be the function sqrt(). The input (the argument) must be a number, and the return value (in fact, the output) is the square root of that number. Executing a function (‘running it’) is called calling the function.
+
+
+
+
+\subsection{Vectors and Data Types}
+ vector is the most common and basic data type in R, and is pretty much the workhorse of R. A vector is composed by a series of values, which can be either numbers or characters. We can assign a series of values to a vector using the c() function. For example we can create a vector of household members for the households we’ve interviewed and assign it to a new object hh\_members:
+ 
+\includegraphics[width=10cm]{Images/RStudio010.PNG}
+
+Testing combined vectors and outputs:
+
+\includegraphics[width=10cm]{Images/RStudio011.PNG}
+
+
+\subsection{Subsetting Vectors}
+
+Using indices to extract specific information from a vector value.
+
+\includegraphics[width=8cm]{Images/RStudio012.PNG}
+
+\subsection{Conditional Subsetting}
+
+Using TRUE/FALSE conditions for subset filtering.
+
+Also using == and <= and >= and < and > as refining filters.
+
+\includegraphics[width=8cm]{Images/RStudio013.PNG}
+
+\includegraphics[width=8cm]{Images/RStudio014.PNG}
+
+
+\subsection{Missing Data}
 
 
 \end{document}
