@@ -1080,7 +1080,7 @@ Our interviews data frame has rows and columns (it has 2 dimensions), if we want
 
 You can also exclude certain indices of a data frame using the “-” sign:    
 
-\includegraphics[width=10cm]{RStudio023.PNG}
+\includegraphics[width=10cm]{Images/RStudio023.PNG}
 
 \subsection{Factors}
 
@@ -1090,13 +1090,73 @@ Factors represent categorical data. They are stored as integers associated with 
 
 Once created, factors can only contain a pre-defined set of values, known as levels. By default, R always sorts levels in alphabetical order. For instance, if you have a factor with 2 levels:
 
-\includegraphics[width=10cm]{RStudio024.PNG}
+\includegraphics[width=10cm]{Images/RStudio024.PNG}
 
 In R’s memory, these factors are represented by integers (1, 2), but are more informative than integers because factors are self describing: "cement", "earth" is more descriptive than 1, and 2. Which one is “earth”? You wouldn’t be able to tell just from the integer data. Factors, on the other hand, have this information built in. It is particularly helpful when there are many levels. It also makes renaming levels easier. Let’s say we made a mistake and need to recode “cement” to “brick”.
 
-\includegraphics[width=10cm]{RStudio025.PNG}
+\includegraphics[width=10cm]{Images/RStudio025.PNG}
 
 \subsection{Converting Factors}
+
+If you need to convert a factor to a character vector, you use as.character(x).
+
+\includegraphics[width=10cm]{Images/RStudio026.PNG}
+
+The last way is the recommended way - as it is consistent and reliable. 
+
+\subsection{Renaming Factors}
+
+When your data is stored as a factor, you can use the plot() function to get a quick glance at the number of observations represented by each factor level. Let’s extract the memb\_assoc column from our data frame, convert it into a factor, and use it to look at the number of interview respondents who were or were not members of an irrigation association:
+
+\includegraphics[width=10cm]{Images/RStudio027.PNG}
+
+\includegraphics[width=10cm]{Images/RStudio028.PNG}
+
+\includegraphics[width=10cm]{Images/RStudio029.PNG}
+
+\includegraphics[width=10cm]{Images/RStudio030.PNG}
+
+Exercise Outcome:
+
+\includegraphics[width=10cm]{Images/RStudio031.PNG}
+
+\includegraphics[width=10cm]{Images/RStudio032.PNG}
+
+
+\subsection{Formatting Dates}
+
+One of the most common issues that new (and experienced!) R users have is converting date and time information into a variable that is appropriate and usable during analyses. As a reminder from earlier in this lesson, the best practice for dealing with date data is to ensure that each component of your date is stored as a separate variable. In our dataset, we have a column interview\_date which contains information about the year, month, and day that the interview was conducted. Let’s convert those dates into three separate columns.
+
+
+\includegraphics[width=10cm]{Images/RStudio033.PNG}
+
+\subsection{Data Manipulation using dplyr and tidyr}
+
+dplyr is a package for making tabular data manipulation easier by using a limited set of functions that can be combined to extract and summarize insights from your data. It pairs nicely with tidyr which enables you to swiftly convert between different data formats (long vs. wide) for plotting and analysis.
+
+Similarly to readr, dplyr and tidyr are also part of the tidyverse. These packages were loaded in R’s memory when we called library(tidyverse) earlier.
+
+\subsection{Selecting columns and filtering rows}
+
+To select columns of a data frame, use select(). The first argument to this function is the data frame (interviews), and the subsequent arguments are the columns to keep.
+
+To choose rows based on a specific criteria, use filter():
+
+\includegraphics[width=10cm]{Images/RStudio034.PNG}
+
+
+\subsection{Pipes}
+
+What if you want to select and filter at the same time? There are three ways to do this: use intermediate steps, nested functions, or pipes.
+
+With intermediate steps, you create a temporary data frame and use that as input to the next function, like this:
+
+\includegraphics[width=10cm]{Images/RStudio035.PNG}
+
+\includegraphics[width=10cm]{Images/RStudio036.PNG}
+
+\subsection{Mutate}
+
 
 
 \end{document}
